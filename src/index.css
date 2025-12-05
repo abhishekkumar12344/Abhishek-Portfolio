@@ -1,0 +1,140 @@
+/* Google Fonts Import - Moved to TOP for faster loading and no FOUC */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+/* CSS Custom Properties (Variables) */
+:root {
+  --primary: #007BFF;
+  --secondary: #6C757D;
+  --accent: #28A745;
+  --bg-light: #F8F9FA;
+  --text-dark: #333;
+  --white: #FFF;
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML Smooth Scrolling (for anchor links and AOS) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body Styles - Enhanced for Full Layout Coverage */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh; /* Ensures full viewport height, prevents short-page issues */
+}
+
+/* Headings - Poppins Font */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Global Links - Consistent Styling (Fixes Default Browser Blues/Underlines) */
+a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent for theme consistency */
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary); /* Subtle hover effect across site */
+}
+
+/* Global Buttons - Base Styles (For Forms, Nav, etc.) */
+button,
+input[type="submit"],
+.btn { /* .btn class for reusable buttons if needed */
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: var(--accent);
+  transform: translateY(-2px); /* Lift effect for better interactivity */
+  box-shadow: var(--shadow);
+}
+
+/* Global Container - Optional Max-Width for Wide Screens (Prevents Stretching) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* AOS Note: Import AOS CSS in src/index.js for animations:
+   import 'aos/dist/aos.css';
+   This ensures fade-up, zoom-in effects style properly without layout breaks.
+*/
+
+/* Responsive Design - Enhanced Media Queries */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Smaller base font on tablet/mobile */
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* Reduce global padding on smaller screens */
+  button,
+  input[type="submit"] {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px; /* Even smaller for phones */
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  /* Extra tight spacing on very small screens */
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  button,
+  input[type="submit"] {
+    width: 100%; /* Full-width buttons on mobile for touch ease */
+    padding: 0.8rem;
+  }
+}
