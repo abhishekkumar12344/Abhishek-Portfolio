@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaExternalLinkAlt, FaGithub, FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./Projects.css";
+import "./ProJects.css"
 
 const projectImages = {
   project1: "https://picsum.photos/400/300?random=1",
